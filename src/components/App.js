@@ -29,7 +29,7 @@ class App extends Component {
       list: [
         {
           name: this.state.pendingItem,
-          x:0,
+          x:0,penis
           y:0,
           z:0,
           check: false,
