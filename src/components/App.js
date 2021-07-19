@@ -81,6 +81,13 @@ class App extends Component {
     });
   }
 
+  handlecRemove = e => {
+    const newState = this.state.list.filter(item => item.check !== true);
+    this.setState({
+      list: newState
+    });
+  }
+
   handleRemove = index => {
     const newState = this.state.list.filter(item => this.state.list.indexOf(item) !== index);
     this.setState({
@@ -142,9 +149,9 @@ class App extends Component {
         DeleteSearchHandler = {this.DeleteSearchHandler}
         />
 
-        <CheckedDelete
-
-        />
+        <button onClick={this.handlecRemove}>
+          Delete Checked
+        </button>
 
         <List list = {this.state.list}
         handleRemove = {this.handleRemove}
