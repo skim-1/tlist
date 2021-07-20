@@ -11,8 +11,6 @@ import SearchForm from "./SearchForm"
 
 import DeleteSearch from "./DeleteSearch";
 
-import CheckedDelete from "./CheckedDelete";
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +18,7 @@ class App extends Component {
     // getInitialState
     this.state = {
       list: [],
-      pendingItem:""
+      pendingItemr: ""
     };
   }
 
@@ -29,33 +27,40 @@ class App extends Component {
     this.setState({
       list: [
         {
-          name: this.state.pendingItem,
-          x:0,
-          y:0,
-          z:0,
+          name:this.state.pendingItemr,
           check: false,
-          highlight: false
+          highlight: false,
+          x:this.state.pendingItemx,
+          y:this.state.pendingItemy,
+          z:this.state.pendingItemz,
         },
         ...this.state.list
       ],
-      pendingItem:""
+      pendingItemx:"",
+      pendingItemy:"",
+      pendingItemz:"",
+      pendingItemr:""
     });
-    console.log(this.state.list);
+    console.log(this.state.pendingItemr);
   };
 
   newItemSubmitHandler2 = e => {
     e.preventDefault();
     this.setState({
       list: this.state.list.map(item => {
-        if(this.state.pendingItem2.toLowerCase().trim() === item.name.toLowerCase().trim()) {
+        if(this.state.pendingItem2x === item.x && this.state.pendingItem2y === item.y && this.state.pendingItem2z === item.z) {
           return {...item, highlight: true};
+          console.log("working");
         }
         else {
           return {...item, highlight: false}
         }
-      })
+      }),
+
+      pendingItem2x:"",
+      pendingItem2y:"",
+      pendingItem2z:"",
     });
-    console.log(this.state.list[0]);
   };
 
 
@@ -71,13 +76,43 @@ class App extends Component {
 
   handleItemInput = e => {
     this.setState({
-      pendingItem: e.target.value
+      pendingItemr: e.target.value
+    })
+  }
+
+  handleItemInputx = e => {
+    this.setState({
+      pendingItemx: e.target.value
     });
   }
 
-  handleItemInput2 = e => {
+  handleItemInputy = e => {
     this.setState({
-      pendingItem2: e.target.value
+      pendingItemy: e.target.value
+    });
+  }
+
+  handleItemInputz = e => {
+    this.setState({
+      pendingItemz: e.target.value
+    });
+  }
+
+  handleItemInput2x = e => {
+    this.setState({
+      pendingItem2x: e.target.value
+    });
+  }
+
+  handleItemInput2y = e => {
+    this.setState({
+      pendingItem2y: e.target.value
+    });
+  }
+
+  handleItemInput2z = e => {
+    this.setState({
+      pendingItem2z: e.target.value
     });
   }
 
@@ -136,27 +171,39 @@ class App extends Component {
         <InputForm
         newItemSubmitHandler = {this.newItemSubmitHandler}
         handleItemInput = {this.handleItemInput}
-        pendingItem = {this.state.pendingItem}
+        pendingItemr = {this.pendingItemr}
+        handleItemInputx = {this.handleItemInputx}
+        pendingItemx = {this.state.pendingItemx}
+        handleItemInputy = {this.handleItemInputy}
+        pendingItemy = {this.state.pendingItemy}
+        handleItemInputz = {this.handleItemInputz}
+        pendingItemz = {this.state.pendingItemz}
         />
 
         <SearchForm
         newItemSubmitHandler2 = {this.newItemSubmitHandler2}
-        handleItemInput2 = {this.handleItemInput2}
-        pendingItem2 = {this.state.pendingItem2}
+        handleItemInput2x = {this.handleItemInput2x}
+        pendingItem2x = {this.state.pendingItem2x}
+        handleItemInput2y = {this.handleItemInput2y}
+        pendingItem2y = {this.state.pendingItem2y}
+        handleItemInput2z = {this.handleItemInput2z}
+        pendingItem2z = {this.state.pendingItem2z}
         />
 
         <DeleteSearch
         DeleteSearchHandler = {this.DeleteSearchHandler}
         />
 
-        <button onClick={this.handlecRemove}>
-          Delete Checked
-        </button>
-
         <List list = {this.state.list}
         handleRemove = {this.handleRemove}
         handleCheck = {this.handleCheck}
         />
+
+        <button onClick={this.handlecRemove}>
+          Delete Checked
+        </button>
+
+        <br/>
 
         <button onClick={this.deleteall}>
           Delete All

@@ -4,17 +4,40 @@ const InputForm = props => {
     return (
         <form onSubmit={props.newItemSubmitHandler} className = "todoinput">
             <input
-            className = "input"
+            className = "itemin"
             type = "text"
             onChange = {props.handleItemInput}
-            value = {props.pendingItem}
-            placeholder = "Add an item"
-        />
-        <button type = "submit" name = "submit" value = "submit">
-            Submit
-        </button>
+            value = {props.pendingItemr}
+            placeholder = "Item"
+            />
+            <input
+            className = "input"
+            type = "number"
+            onChange = {props.handleItemInputx}
+            value = {props.pendingItemx}
+            placeholder = "x"
+            />
+
+            <input
+                className = "input"
+                type = "number"
+                onChange = {props.handleItemInputy}
+                value = {props.pendingItemy}
+                placeholder = "y"
+            />
+
+            <input
+                className = "inputz"
+                type = "number"
+                onChange = {props.handleItemInputz}
+                value = {props.pendingItemz}
+                placeholder = "z"
+            />
+
+            <button type = "submit" name = "submit" value = "submit" onSubmit={props.newItemSubmitHandler}>
+                Submit
+            </button>
         </form>
-        
     );
 };
 
