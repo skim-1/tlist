@@ -7,9 +7,10 @@ const InputForm = props => {
             className = "itemin"
             type = "text"
             onChange = {props.handleItemInput}
-            value = {props.pendingItemr}
+            value = {props.pendingItem}
             placeholder = "Item"
             />
+
             <input
             className = "input"
             type = "number"

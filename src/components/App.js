@@ -18,7 +18,7 @@ class App extends Component {
     // getInitialState
     this.state = {
       list: [],
-      pendingItemr: ""
+      pendingItem: ""
     };
   }
 
@@ -27,7 +27,7 @@ class App extends Component {
     this.setState({
       list: [
         {
-          name:this.state.pendingItemr,
+          name:this.state.pendingItem,
           check: false,
           highlight: false,
           x:this.state.pendingItemx,
@@ -39,9 +39,9 @@ class App extends Component {
       pendingItemx:"",
       pendingItemy:"",
       pendingItemz:"",
-      pendingItemr:""
+      pendingItem:""
     });
-    console.log(this.state.pendingItemr);
+    console.log(this.state.pendingItem);
   };
 
   newItemSubmitHandler2 = e => {
@@ -76,8 +76,8 @@ class App extends Component {
 
   handleItemInput = e => {
     this.setState({
-      pendingItemr: e.target.value
-    })
+      pendingItem: e.target.value
+    });
   }
 
   handleItemInputx = e => {
@@ -171,7 +171,7 @@ class App extends Component {
         <InputForm
         newItemSubmitHandler = {this.newItemSubmitHandler}
         handleItemInput = {this.handleItemInput}
-        pendingItemr = {this.pendingItemr}
+        pendingItem = {this.pendingItem}
         handleItemInputx = {this.handleItemInputx}
         pendingItemx = {this.state.pendingItemx}
         handleItemInputy = {this.handleItemInputy}
