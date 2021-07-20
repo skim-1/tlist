@@ -5,9 +5,9 @@ const ListItem = props => {
     return (
       <li style={{backgroundColor: ( props.highlight ) ? "yellow":"white"}}>
 
-          {props.item} --- X: {props.x} | Y: {props.y} | Z: {props.z}
-
-
+          <button onClick={() => {props.handleEditClick(props.itemIndex)}}>
+              {props.item} --- X: {props.x} | Y: {props.y} | Z: {props.z}
+          </button>
 
           <input className="input" type="checkbox" checked={props.check} className="input" value={props.itemIndex} onChange={() => {props.handleCheck(props.itemIndex)}}/>
           <button className="action" onClick={

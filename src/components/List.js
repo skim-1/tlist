@@ -17,7 +17,7 @@ const List = props => {
                         x = {item.x}
                         y = {item.y}
                         z = {item.z}
-
+                        handleEditClick = {props.handleEditClick}
                     />
                 ))}
             </ul>

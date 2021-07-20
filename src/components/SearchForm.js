@@ -7,7 +7,7 @@ const SearchForm = props => {
                 className = "input"
                 type = "text"
                 onChange = {props.handleItemInput2x}
-                value = {props.pendingItemx}
+                value = {props.pendingItem2x}
                 placeholder = "x"
             />
 

@@ -11,6 +11,8 @@ import SearchForm from "./SearchForm"
 
 import DeleteSearch from "./DeleteSearch";
 
+import EditItem from "./EditItem";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +20,19 @@ class App extends Component {
     // getInitialState
     this.state = {
       list: [],
-      pendingItem: ""
+      pendingItem: "",
+      pendingItemx: 0,
+      pendingItemy: 0,
+      pendingItemz: 0,
+      pendingItem2x: 0,
+      pendingItem2y: 0,
+      pendingItem2z: 0,
+      pendingEditx: 0,
+      pendingEdity: 0,
+      pendingEditz: 0,
+
+      pendingEdit: {},
+      showEdit: false
     };
   }
 
@@ -63,6 +77,51 @@ class App extends Component {
     });
   };
 
+  editHandler = e => {
+    e.preventDefault();
+    const newState = this.state.list;
+
+    for(let i = 0; i < newState.length; i++) {
+      if(newState[i].highlight) {
+        newState[i].x = this.state.pendingEditx;
+        newState[i].y = this.state.pendingEdity;
+        newState[i].z = this.state.pendingEditz;
+      }
+    }
+
+    this.setState({
+      list: newState
+    });
+  }
+
+  handleEditClick = index => {
+    const newState = this.state.list;
+
+    /*
+    newState.forEach(item=>{
+      item.highlight = false;
+    })
+    */
+    let isHighlighted = false
+    if(newState[index].highlight) {
+      isHighlighted = true
+    }
+
+    for(let i = 0; i < newState.length; i++) {
+      newState[i].highlight = false;
+    }
+
+    newState[index].highlight = !isHighlighted;
+
+    this.state.showEdit = newState[index].highlight;
+
+    this.setState({
+      list: newState,
+      pendingEditx: newState[index].x,
+      pendingEdity: newState[index].y,
+      pendingEditz: newState[index].z,
+    });
+  }
 
   DeleteSearchHandler = e => {
     e.preventDefault();
@@ -113,6 +172,24 @@ class App extends Component {
   handleItemInput2z = e => {
     this.setState({
       pendingItem2z: e.target.value
+    });
+  }
+
+  handleItemEditx = e => {
+    this.setState({
+      pendingEditx: e.target.value
+    });
+  }
+
+  handleItemEdity = e => {
+    this.setState({
+      pendingEdity: e.target.value
+    });
+  }
+
+  handleItemEditz = e => {
+    this.setState({
+      pendingEditz: e.target.value
     });
   }
 
@@ -171,7 +248,7 @@ class App extends Component {
         <InputForm
         newItemSubmitHandler = {this.newItemSubmitHandler}
         handleItemInput = {this.handleItemInput}
-        pendingItem = {this.pendingItem}
+        pendingItem = {this.state.pendingItem}
         handleItemInputx = {this.handleItemInputx}
         pendingItemx = {this.state.pendingItemx}
         handleItemInputy = {this.handleItemInputy}
@@ -190,6 +267,18 @@ class App extends Component {
         pendingItem2z = {this.state.pendingItem2z}
         />
 
+        <EditItem
+
+            showEdit = {this.state.showEdit}
+            editHandler = {this.editHandler}
+            handleItemEditx = {this.handleItemEditx}
+            pendingEditx = {this.state.pendingEditx}
+            handleItemEdity = {this.handleItemEdity}
+            pendingEdity = {this.state.pendingEdity}
+            handleItemEditz = {this.handleItemEditz}
+            pendingEditz = {this.state.pendingEditz}
+        />
+
         <DeleteSearch
         DeleteSearchHandler = {this.DeleteSearchHandler}
         />
@@ -197,6 +286,8 @@ class App extends Component {
         <List list = {this.state.list}
         handleRemove = {this.handleRemove}
         handleCheck = {this.handleCheck}
+        handleEditClick = {this.handleEditClick}
+
         />
 
         <button onClick={this.handlecRemove}>
