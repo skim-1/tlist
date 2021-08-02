@@ -7,7 +7,7 @@ const EditItem = props => {
             <input
                 className = "input"
                 type = "text"
-                onChange = {props.handleItemEditx}
+                onChange = {props.handleItemEdit}
                 value = {props.pendingEdit.x}
                 placeholder = "x"
             />
@@ -15,7 +15,7 @@ const EditItem = props => {
             <input
                 className = "input"
                 type = "number"
-                onChange = {props.handleItemEdity}
+                onChange = {props.handleItemEdit}
                 value = {props.pendingEdit.y}
                 placeholder = "y"
             />
@@ -23,7 +23,7 @@ const EditItem = props => {
             <input
                 className = "inputz"
                 type = "number"
-                onChange = {props.handleItemEditz}
+                onChange = {props.handleItemEdit}
                 value = {props.pendingEdit.z}
                 placeholder = "z"
             />

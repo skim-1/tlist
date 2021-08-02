@@ -4,28 +4,13 @@ const SearchForm = props => {
     return (
         <form onSubmit={props.newItemSubmitHandler2} className = "todoinput">
             <input
-                className = "input"
+                className = "inputsearch"
                 type = "text"
-                onChange = {props.handleItemInput2x}
-                value = {props.pendingItem2.x}
-                placeholder = "x"
+                onChange = {props.handleItemInput2}
+                value = {props.pendingItem2}
+                placeholder = "Search"
             />
 
-            <input
-                className = "input"
-                type = "number"
-                onChange = {props.handleItemInput2y}
-                value = {props.pendingItem2.y}
-                placeholder = "y"
-            />
-
-            <input
-                className = "inputz"
-                type = "number"
-                onChange = {props.handleItemInput2z}
-                value = {props.pendingItem2.z}
-                placeholder = "z"
-            />
             <button type = "submit" name = "submit" value = "submit" >
                 Search
             </button>

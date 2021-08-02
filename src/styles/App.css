@@ -88,6 +88,11 @@ button {
   color: #fff;
 }
 
+button:active {
+  color: #fff;
+  background-color: #4e9cc7;
+}
+
 ul {
   list-style: none;
   margin-bottom: 50px;
