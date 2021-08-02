@@ -88,9 +88,28 @@ button {
   color: #fff;
 }
 
-button:active {
+.buttonlistitem {
+  background: #62c7ff;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
+  padding: 7px 15px;
+  border-radius: 4px;
   color: #fff;
-  background-color: #4e9cc7;
+}
+
+button:hover {
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+}
+
+button:active {
+  color: rgb(255, 255, 255);
+  background-color: #00a6ff;
+  transform: translateY(1px);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
 
 ul {
@@ -100,9 +119,9 @@ ul {
 
 li {
   font-weight: 300;
-  padding: 20px 0 20px 0;
+  padding: 5px 0 5px 0;
   border-top: 1px solid #eee;
-  display: flex;
+  display: block;
   justify-content: space-between;
 }
 

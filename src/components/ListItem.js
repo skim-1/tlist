@@ -5,15 +5,15 @@ const ListItem = props => {
     return (
       <li style={{backgroundColor: ( props.item.highlight ) ? "yellow":"white"}}>
 
-          <button onClick={() => {props.handleEditClick(props.itemIndex)}}>
+          <button className="buttonlistitem" onClick={() => {props.handleEditClick(props.itemIndex)}}>
               {props.item.name} --- X: {props.item.coords.x} | Y: {props.item.coords.y} | Z: {props.item.coords.z}
           </button>
 
           <input className="input" type="checkbox" checked={props.item.check} className="input" value={props.itemIndex} onChange={() => {props.handleCheck(props.itemIndex)}}/>
-          <button className="action" onClick={
+          <button className="buttonlistitem" onClick={
             () => {props.handleRemove(props.itemIndex)}
           }>
-          x
+          X
         </button>
 
       </li>
