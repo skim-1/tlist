@@ -7,7 +7,7 @@ const SearchForm = props => {
                 className = "input"
                 type = "text"
                 onChange = {props.handleItemInput2x}
-                value = {props.pendingItem2x}
+                value = {props.pendingItem2.x}
                 placeholder = "x"
             />
 
@@ -15,7 +15,7 @@ const SearchForm = props => {
                 className = "input"
                 type = "number"
                 onChange = {props.handleItemInput2y}
-                value = {props.pendingItem2y}
+                value = {props.pendingItem2.y}
                 placeholder = "y"
             />
 
@@ -23,7 +23,7 @@ const SearchForm = props => {
                 className = "inputz"
                 type = "number"
                 onChange = {props.handleItemInput2z}
-                value = {props.pendingItem2z}
+                value = {props.pendingItem2.z}
                 placeholder = "z"
             />
             <button type = "submit" name = "submit" value = "submit" >

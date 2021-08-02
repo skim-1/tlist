@@ -11,12 +11,7 @@ const List = props => {
                         key={index}
                         itemIndex={index}
                         handleRemove={props.handleRemove}
-                        check = {item.check}
-                        highlight = {item.highlight}
-                        item = {item.name}
-                        x = {item.x}
-                        y = {item.y}
-                        z = {item.z}
+                        item = {item}
                         handleEditClick = {props.handleEditClick}
                     />
                 ))}

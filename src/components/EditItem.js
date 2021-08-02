@@ -8,7 +8,7 @@ const EditItem = props => {
                 className = "input"
                 type = "text"
                 onChange = {props.handleItemEditx}
-                value = {props.pendingEditx}
+                value = {props.pendingEdit.x}
                 placeholder = "x"
             />
 
@@ -16,7 +16,7 @@ const EditItem = props => {
                 className = "input"
                 type = "number"
                 onChange = {props.handleItemEdity}
-                value = {props.pendingEdity}
+                value = {props.pendingEdit.y}
                 placeholder = "y"
             />
 
@@ -24,7 +24,7 @@ const EditItem = props => {
                 className = "inputz"
                 type = "number"
                 onChange = {props.handleItemEditz}
-                value = {props.pendingEditz}
+                value = {props.pendingEdit.z}
                 placeholder = "z"
             />
             <button type = "submit" name = "submit" value = "submit">

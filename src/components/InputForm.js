@@ -14,24 +14,24 @@ const InputForm = props => {
             <input
             className = "input"
             type = "number"
-            onChange = {props.handleItemInputx}
-            value = {props.pendingItemx}
+            onChange = {props.handleItemInput}
+            value = {props.pendingItemc.x}
             placeholder = "x"
             />
 
             <input
                 className = "input"
                 type = "number"
-                onChange = {props.handleItemInputy}
-                value = {props.pendingItemy}
+                onChange = {props.handleItemInput}
+                value = {props.pendingItemc.y}
                 placeholder = "y"
             />
 
             <input
                 className = "inputz"
                 type = "number"
-                onChange = {props.handleItemInputz}
-                value = {props.pendingItemz}
+                onChange = {props.handleItemInput}
+                value = {props.pendingItemc.z}
                 placeholder = "z"
             />
 
