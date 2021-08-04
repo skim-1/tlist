@@ -6,7 +6,7 @@ const EditItem = props => {
         <form onSubmit={props.editHandler} className = "todoinput">
             <input
                 className = "input"
-                type = "text"
+                type = "number"
                 onChange = {props.handleItemEdit}
                 value = {props.pendingEdit.x}
                 placeholder = "x"
@@ -21,7 +21,7 @@ const EditItem = props => {
             />
 
             <input
-                className = "inputz"
+                className = "input"
                 type = "number"
                 onChange = {props.handleItemEdit}
                 value = {props.pendingEdit.z}

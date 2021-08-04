@@ -159,26 +159,12 @@ class App extends Component {
       this.setState({
         pendingItem: e.target.value
       });
-    if (type === "x")
+    else
+    //otherwise type can either be x, y, z
       this.setState(prevState => ({
         pendingItemc : {
           ...prevState.pendingItemc,
-          x: value
-        }
-      }));
-    if (type === "y")
-      this.setState(prevState => ({
-        pendingItemc : {
-          ...prevState.pendingItemc,
-          y: value
-        }
-      }));
-
-    if (type === "z")
-      this.setState(prevState => ({
-        pendingItemc : {
-          ...prevState.pendingItemc,
-          z: value
+          [type]: value
         }
       }));
   }
@@ -192,28 +178,12 @@ class App extends Component {
   handleItemEdit = e => {
     let value = e.target.value
     let type = e.target.placeholder;
-    if (type === "x")
-      this.setState(prevState => ({
-        pendingEdit : {
-          ...prevState.pendingEdit,
-          x: value
-        }
-      }));
-    if (type === "y")
-      this.setState(prevState => ({
-        pendingEdit : {
-          ...prevState.pendingEdit,
-          y: value
-        }
-      }));
-
-    if (type === "z")
-      this.setState(prevState => ({
-        pendingEdit : {
-          ...prevState.pendingEdit,
-          z: value
-        }
-      }));
+    this.setState(prevState => ({
+      pendingEdit : {
+        ...prevState.pendingEdit,
+        [type]: value
+      }
+    }));
   }
 
   handlecRemove = e => {

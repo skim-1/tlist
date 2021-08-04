@@ -28,15 +28,14 @@ const InputForm = props => {
             />
 
             <input
-                className = "inputz"
+                className = "input"
                 type = "number"
                 onChange = {props.handleItemInput}
                 value = {props.pendingItemc.z}
                 placeholder = "z"
             />
-
-            <button type = "submit" name = "submit" value = "submit" onSubmit={props.newItemSubmitHandler}>
-                Submit
+            <button className = "buttonsubmit" type = "submit" name = "submit" value = "submit" onSubmit={props.newItemSubmitHandler}>
+                Add
             </button>
         </form>
     );
