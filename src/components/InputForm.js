@@ -3,13 +3,7 @@ import React from "react";
 const InputForm = props => {
     return (
         <form onSubmit={props.newItemSubmitHandler} className = "todoinput">
-            <input
-            className = "itemin"
-            type = "text"
-            onChange = {props.handleItemInput}
-            value = {props.pendingItem}
-            placeholder = "Item"
-            />
+            
 
             <input
             className = "input"

@@ -245,11 +245,7 @@ class App extends Component {
         pendingItemc = {this.state.pendingItemc}
         />
 
-        <SearchForm
-        newItemSubmitHandler2 = {this.newItemSubmitHandler2}
-        handleItemInput2 = {this.handleItemInput2}
-        pendingItem2 = {this.state.pendingItem2}
-        />
+        
 
         <EditItem
             showEdit = {this.state.showEdit}
