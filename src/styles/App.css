@@ -14,7 +14,7 @@ body {
   font-size: 0px;
 }
 
-.wrapper {
+.wrapperList {
   max-width: 306px;
   margin: auto;
   background: #fff;
@@ -22,14 +22,6 @@ body {
   display: flex;
   flex-direction: column;
   /*padding: 50px;*/
-}
-
-.title {
-  align-self: flex-start;
-  font-size: 3rem;
-  font-weight: 300;
-  color: #333;
-  margin-bottom: 30px;
 }
 
 .todoInput {

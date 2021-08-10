@@ -237,7 +237,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="wrapperList">
         <InputForm
         newItemSubmitHandler = {this.newItemSubmitHandler}
         handleItemInput = {this.handleItemInput}
